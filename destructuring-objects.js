@@ -87,10 +87,10 @@ console.log(open);
 /**Destructure from within function parameters. */
 // Create person object with delivery details
 const customer = {
-  name: "Michael Carbonari",
+  name: "John Doe",
   starterIndex: 2,
   mainIndex: 0,
-  address: "15 Sunset Road",
+  address: "1 Main Street",
 };
 
 // Pass in the single object and allow the function to destructure.
