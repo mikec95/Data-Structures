@@ -1,12 +1,15 @@
-'use strict';
+"use strict";
 
 // Object with data used for exercises below.
 const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -41,3 +44,7 @@ let [first, second, third, fourth] = arr;
 [first, second, third, fourth] = [second, first, third, fourth];
 console.log(first, second, third, fourth);
 
+// Destructure from a function that returns an array
+const [starter, main] = restaurant.order(0, 2);
+console.log(`Starter: ${starter}
+Main: ${main}`);
