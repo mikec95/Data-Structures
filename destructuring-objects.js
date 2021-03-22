@@ -11,6 +11,14 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  // Create function to take in object with the following variable names.
+  delivery: function ({ name, address, mainIndex, starterIndex }) {
+    return `Thank you for your order, ${name}!
+    Address: ${address}
+    Starter: ${this.starterMenu[starterIndex]}
+    Main: ${this.mainMenu[mainIndex]}`;
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -75,3 +83,15 @@ console.log(sat);
 // Destructure from Saturday.
 const { open } = sat;
 console.log(open);
+
+/**Destructure from within function parameters. */
+// Create person object with delivery details
+const customer = {
+  name: "Michael Carbonari",
+  starterIndex: 2,
+  mainIndex: 0,
+  address: "15 Sunset Road",
+};
+
+// Pass in the single object and allow the function to destructure.
+console.log(restaurant.delivery(customer));
