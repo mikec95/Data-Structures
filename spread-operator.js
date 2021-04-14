@@ -65,6 +65,17 @@ console.log(newMenu2);
 //   prompt(`Pasta ingredient 3: `),
 // ];
 // Use spread operator to unpack array elements into orderPasts function args.
-console.log(restaurant.orderPasta(...ingredients));
+//console.log(restaurant.orderPasta(...ingredients));
 
 // Spread operator with objects.
+// Unpack the contents of the restuarant object above into the newRestaurant object
+const newRestaurant = {
+  owner: "Michael Carbonari",
+  founded: 1995,
+
+  // Adds properties and values of restaurant individually to newRestaurant.
+  // Without spread, entire restuarant object would be nested into newRestaurant.
+  ...restaurant,
+};
+// OUTPUT: Single object with owner prop, founded prop, and individual props of restaurant object
+console.log(newRestaurant);
