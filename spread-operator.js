@@ -37,14 +37,18 @@ const restaurant = {
 
 // Use the spread operator (...) to pull elements from
 // array and add them to new array as separate elements.
+// OUTPUT: ["Paninni", "Cereal", "Pizza", "Pasta", "Risotto"]
 let newMenu = ["Panini", "Cereal", ...restaurant.mainMenu];
-
-// ["Paninni", "Cereal", "Pizza", "Pasta", "Risotto"]
 console.log(newMenu);
+
+// Create new manu which contains contents of starter menu
+// and main menu.
+// OUTPUT:  ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad", "Pizza", "Pasta", "Risotto"]
+let menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
 
 // Adding restaurant.mainMenu to the newMenu2 without the spread operator,
 // Will add the whole array to the newMenu2.
+// OUTPUT: ["Panini", "Cereal", ["Pizza", "Pasta", "Risotto"]]
 let newMenu2 = ["Panini", "Cereal", restaurant.mainMenu];
-
-// ["Panini", "Cereal", ["Pizza", "Pasta", "Risotto"]]
 console.log(newMenu2);
