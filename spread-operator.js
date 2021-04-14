@@ -59,10 +59,12 @@ let newMenu2 = ["Panini", "Cereal", restaurant.mainMenu];
 console.log(newMenu2);
 
 // Pasta ingredients entered by user saved to array.
-const ingredients = [
-  prompt(`Pasta ingredient 1: `),
-  prompt(`Pasta ingredient 2: `),
-  prompt(`Pasta ingredient 3: `),
-];
-// Descructure array elements into orderPasts function.
+// const ingredients = [
+//   prompt(`Pasta ingredient 1: `),
+//   prompt(`Pasta ingredient 2: `),
+//   prompt(`Pasta ingredient 3: `),
+// ];
+// Use spread operator to unpack array elements into orderPasts function args.
 console.log(restaurant.orderPasta(...ingredients));
+
+// Spread operator with objects.
