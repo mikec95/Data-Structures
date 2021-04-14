@@ -7,8 +7,13 @@ const restaurant = {
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
+
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    return `Pasta with: ${ing1}, ${ing2}, ${ing3}`;
   },
 
   // Create function to take in object with the following variable names.
@@ -52,3 +57,12 @@ console.log(menu);
 // OUTPUT: ["Panini", "Cereal", ["Pizza", "Pasta", "Risotto"]]
 let newMenu2 = ["Panini", "Cereal", restaurant.mainMenu];
 console.log(newMenu2);
+
+// Pasta ingredients entered by user saved to array.
+const ingredients = [
+  prompt(`Pasta ingredient 1: `),
+  prompt(`Pasta ingredient 2: `),
+  prompt(`Pasta ingredient 3: `),
+];
+// Descructure array elements into orderPasts function.
+console.log(restaurant.orderPasta(...ingredients));
