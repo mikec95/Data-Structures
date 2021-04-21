@@ -85,3 +85,5 @@ const add = function (...nums) {
   console.log(nums.reduce((a, b) => a + b));
 };
 add(1, 2, 3, 4, 5, 6);
+add(1, 2, 3555);
+add(11111, 0, 0, 3);
