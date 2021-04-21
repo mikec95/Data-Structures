@@ -36,6 +36,10 @@ const restaurant = {
     return `Pasta with: ${ing1}, ${ing2}, ${ing3}`;
   },
 
+  orderPizza: function (mainIngredient, ...restOfIngredients) {
+    return `Pizza with ${mainIngredient} ${restOfIngredients}`;
+  },
+
   // Create function to take in object with the following variable names.
   delivery: function ({ name, address, mainIndex, starterIndex }) {
     return `Thank you for your order, ${name}!
@@ -94,3 +98,14 @@ add(11111, 0, 0, 3);
 const x = [23, 5, 7];
 [a, b, c] = [...x];
 add(a, b, c);
+
+/************************************************************* */
+
+// Use the Rest parameter to pass ingredients into the orderPizza
+// function within the restaurant object.
+// SPREAD elements of ingredients array into separate elements.
+// Destructure ingredients array first into main variable, and then
+// destructure the REST of them into others variable.
+const ingredients = ["Cheese", "Pineapple", "Bacon", "olives", "spinach"];
+var [main, ...others] = [...ingredients];
+console.log(main, others);
