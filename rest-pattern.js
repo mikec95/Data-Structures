@@ -65,3 +65,8 @@ const [first, , third, ...rest] = [
   ...restaurant.mainMenu,
 ];
 console.log(first, third, rest);
+
+// REST pattern within object
+// OUTPUT: {open: 0, close: 24}, {thu: {...}, fri: {...} }
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(sat, weekdays);
