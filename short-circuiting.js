@@ -13,6 +13,18 @@ console.log(undefined || 0 || "" || "Hello" || 23 || null); // Hello -- first tr
 
 /************************************************************* */
 
+// You can also short circuit the and operator (&&)
+// The and operator short circuits when the first value is falsy,
+// Unlike the or operator (||) which short circuits when the first
+// value is truthy
+console.log(0 && "Hello"); // prints 0
+console.log("77" && null); // prints null
+console.log(-77, NaN); // prints NaN
+console.log(0n && undefined); // prints 0n
+console.log("Hello" && "World"); // prints 'World'. When both are truthy, the final value is printed.
+
+/************************************************************* */
+
 /**
  * Object with data used for exercises below.
  */
