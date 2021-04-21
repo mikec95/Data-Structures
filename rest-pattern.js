@@ -16,7 +16,11 @@ console.log(a, b, c);
 [a, b, c, ...others] = [1, 2, 3, 4, 5, 6];
 console.log(a, b, c, others);
 
-// Object with data used for exercises below.
+/************************************************************* */
+
+/**
+ * Object with data used for exercises below.
+ */
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -70,3 +74,14 @@ console.log(first, third, rest);
 // OUTPUT: {open: 0, close: 24}, {thu: {...}, fri: {...} }
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(sat, weekdays);
+
+/************************************************************* */
+
+// Use REST parameters within functions
+// Pass an arbitrary amount of numbers into the add function
+// The REST parameter will pack them into one array
+// Call the reduce function on the packed array to add values of elements.
+const add = function (...nums) {
+  console.log(nums.reduce((a, b) => a + b));
+};
+add(1, 2, 3, 4, 5, 6);
