@@ -87,3 +87,10 @@ const add = function (...nums) {
 add(1, 2, 3, 4, 5, 6);
 add(1, 2, 3555);
 add(11111, 0, 0, 3);
+
+// We can also use the add function on an array
+// First, destructure array into variables with SPREAD operator
+// Pass variables into add function
+const x = [23, 5, 7];
+[a, b, c] = [...x];
+add(a, b, c);
