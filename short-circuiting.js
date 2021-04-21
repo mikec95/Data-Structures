@@ -1,4 +1,12 @@
 "use-strict";
+/**
+ * This file will show different examples on short circuiting.
+ * Starting with short circuiting or, then and, and then using it in
+ * a practical setting using our restaurant object.
+ *
+ * OR operand (||) will return first truthy value or the final value if both are false.
+ * AND operand (&&) will return the first falsy value or the final value if both are truthy.
+ */
 
 // You can use any given data type to pass into a conditional statement.
 // Javascript has 'truthy' and 'falsy' values for each given data type.
@@ -81,3 +89,17 @@ console.log(numberOfGuests); // This will print 10 because restaurant.numebrOfGu
 restaurant.numberOfGuests = 50;
 numberOfGuests = restaurant.numberOfGuests || 0;
 console.log(numberOfGuests); // Prints 50. reestaurant.numberOfGuests is set to 50, which is truthy. The conditional operation short circuits and 50 is printed.
+
+/************************************************************* */
+
+// If the guests are 0, and the restaurant.numberOfGuests is passed into a conditional statement, it will return false.
+// This is because 0 is a falsy value. In a condition where a default value is set if the numberOfGuests is falsy, this poses a problem,
+// since the default value will be set even though the numberOfGuests is 0.
+// For example:
+restuarant.numberOfGuests = 0;
+numberOfGuests = restaurant.numberOfGuests || 10;
+console.log(numberOfGuests); // Prints 10, since 0 is falsy. Misinforms user of number of guests
+
+// The way around this is to use the NULLISH COALESCING OPERATOR (??)
+let correctNumberOfGuests = restaurant.numberOfGuests ?? 10;
+console.log(correctNumberOfGuests); // Prints 0. Works with the idea of 'nullish values' instead of falsy values.
