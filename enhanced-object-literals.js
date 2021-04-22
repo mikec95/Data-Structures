@@ -24,17 +24,15 @@ const restaurant = {
   mainMenu: ["Pizza", "Pasta", "Risotto"],
   openingHours: openingHours,
 
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
+  order: (starterIndex, mainIndex) => [
+    this.starterMenu[starterIndex],
+    this.mainMenu[mainIndex],
+  ],
 
-  orderPasta(ing1, ing2, ing3) {
-    return `Pasta with: ${ing1}, ${ing2}, ${ing3}`;
-  },
+  orderPasta: (ing1, ing2, ing3) => `Pasta with: ${ing1}, ${ing2}, ${ing3}`,
 
-  orderPizza(mainIngredient, ...restOfIngredients) {
-    return `Pizza with ${mainIngredient} ${restOfIngredients}`;
-  },
+  orderPizza: (mainIngredient, ...restOfIngredients) =>
+    `Pizza with ${mainIngredient} ${restOfIngredients}`,
 
   // Create function to take in object with the following variable names.
   delivery({ name, address, mainIndex, starterIndex }) {
