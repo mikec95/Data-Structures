@@ -1,3 +1,11 @@
+/**
+ * This file will showcase various ways of using object literal ES6 features.
+ * These features include:
+ * - Object Initialization From Variables
+ * - Shorthand object method definition
+ * - Dynamic property keys
+ */
+
 // Move openingHours outside of restaurant and into it's own object.
 const openingHours = {
   openingHours: {
@@ -16,15 +24,20 @@ const openingHours = {
   },
 };
 
+// You can declare a variable outside of an object as well
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
-  openingHours: openingHours,
 
-  // Functions can also use the following syntax with ES6.
+  // ES6 FEATURE: Object Initialization From Variables
+  // Use ES6 features to assign openingHours object values to restuarant.openingHours
+  openingHours,
+
+  // ES6 FEATURE: Shorthand object method definition
+  // Methods can also use the following syntax with ES6.
   // This removes the 'function' keyword and the curly braces
   order: (starterIndex, mainIndex) => [
     this.starterMenu[starterIndex],
@@ -36,7 +49,7 @@ const restaurant = {
   orderPizza: (mainIngredient, ...restOfIngredients) =>
     `Pizza with ${mainIngredient} ${restOfIngredients}`,
 
-  // Create function to take in object with the following variable names.
+  // Create method to take in object with the following variable names.
   delivery({ name, address, mainIndex, starterIndex }) {
     return `Thank you for your order, ${name}!
           Address: ${address}
