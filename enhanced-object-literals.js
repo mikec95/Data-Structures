@@ -24,6 +24,8 @@ const restaurant = {
   mainMenu: ["Pizza", "Pasta", "Risotto"],
   openingHours: openingHours,
 
+  // Functions can also use the following syntax with ES6.
+  // This removes the 'function' keyword and the curly braces
   order: (starterIndex, mainIndex) => [
     this.starterMenu[starterIndex],
     this.mainMenu[mainIndex],
