@@ -53,6 +53,7 @@ const restaurant = {
 
 // For example, if you wanted to check the hours for Thursday,
 // you would implement something like this:
+// UNCOMMENT TO USE EXAMPLE. THIS LOG THROWS AN ERROR AND BREAKS THE REST OF THE FILE
 //console.log(restaurant.openingHours.sat.open); // This will throw a TypeError 'open' of undefined, since sat does not exist.
 
 // You can work around this by implementing the CHAIN OPERATOR.
@@ -63,5 +64,8 @@ console.log(restaurant.openingHours.sat?.open); // A check for the property imme
 // EXAMPLE: Loop through the days of the week and output whether the shop it open on each day of the week.
 // hint: use optional chaining.
 for (const day of days) {
-  console.log(restaurant.openingHours[day]?.open);
+  const weekday = day;
+  console.log(
+    `On ${weekday}: ${restaurant.openingHours[day]?.open ?? "Not Open"}`
+  );
 }
