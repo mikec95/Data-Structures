@@ -6,25 +6,27 @@
  * - Dynamic property keys
  */
 
-// Move openingHours outside of restaurant and into it's own object.
+// ES6 FEATURE: DYNAMIC PROPERTY KEYS
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const openingHours = {
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
   },
 };
+// With ES6, you can access properties of the object based on variables
+// using bracket notation.
+console.log(openingHours.thu.open);
+console.log(openingHours[days[3]].open); // If a property name is stored in a variable, you have to use bracket notation.
 
-// You can declare a variable outside of an object as well
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
