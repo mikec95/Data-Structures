@@ -52,3 +52,6 @@ const restaurant = {
 console.log(restaurant.openingHours.tue.open) // This will throw a TypeError 'open' of undefined, since tue does not exist.
 
 // You can work around this by implementing the CHAIN OPERATOR.
+// With optional chaining, undefined is immediately returned if 
+// a property is invalid
+console.log(restaurant.openingHours.tue?.open) // A check for the property immediately before the '?' is conducted.
