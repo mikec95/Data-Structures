@@ -6,20 +6,19 @@
  */
 
 const openingHours = {
-    mon = {
-        open: 8,
-        close: 9
-    },
-    tue = {
-        open: 8,
-        close: 10
-    },
-    wed = {
-        open: 7,
-        close: 12
-    }
-
-}
+  mon: {
+    open: 8,
+    close: 9,
+  },
+  tue: {
+    open: 8,
+    close: 10,
+  },
+  wed: {
+    open: 7,
+    close: 12,
+  },
+};
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -49,9 +48,9 @@ const restaurant = {
 
 // For example, if you wanted to check the hours for Thursday,
 // you would implement something like this:
-console.log(restaurant.openingHours.tue.open) // This will throw a TypeError 'open' of undefined, since tue does not exist.
+console.log(restaurant.openingHours.sat.open); // This will throw a TypeError 'open' of undefined, since sat does not exist.
 
 // You can work around this by implementing the CHAIN OPERATOR.
-// With optional chaining, undefined is immediately returned if 
+// With optional chaining, undefined is immediately returned if
 // a property is invalid
-console.log(restaurant.openingHours.tue?.open) // A check for the property immediately before the '?' is conducted.
+console.log(restaurant.openingHours.sat?.open); // A check for the property immediately before the '?' is conducted.
