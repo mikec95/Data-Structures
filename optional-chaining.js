@@ -22,6 +22,10 @@ const openingHours = {
     open: 9,
     close: 19,
   },
+  fri: {
+    open: 0,
+    close: 0, //open 24 hours
+  },
 };
 
 const restaurant = {
@@ -64,8 +68,5 @@ console.log(restaurant.openingHours.sat?.open); // A check for the property imme
 // EXAMPLE: Loop through the days of the week and output whether the shop it open on each day of the week.
 // hint: use optional chaining.
 for (const day of days) {
-  const weekday = day;
-  console.log(
-    `On ${weekday}: ${restaurant.openingHours[day]?.open ?? "Not Open"}`
-  );
+  console.log(`On ${day}: ${restaurant.openingHours[day]?.open ?? "Closed"}`); // Use nullish coalescing to check for 0
 }
