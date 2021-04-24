@@ -4,7 +4,7 @@
  * of a property deep within an object, without
  * having to check if the property is valid.
  */
-
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const openingHours = {
   mon: {
     open: 8,
@@ -18,7 +18,12 @@ const openingHours = {
     open: 7,
     close: 12,
   },
+  thu: {
+    open: 9,
+    close: 19,
+  },
 };
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -48,9 +53,15 @@ const restaurant = {
 
 // For example, if you wanted to check the hours for Thursday,
 // you would implement something like this:
-console.log(restaurant.openingHours.sat.open); // This will throw a TypeError 'open' of undefined, since sat does not exist.
+//console.log(restaurant.openingHours.sat.open); // This will throw a TypeError 'open' of undefined, since sat does not exist.
 
 // You can work around this by implementing the CHAIN OPERATOR.
 // With optional chaining, undefined is immediately returned if
 // a property is invalid
 console.log(restaurant.openingHours.sat?.open); // A check for the property immediately before the '?' is conducted.
+
+// EXAMPLE: Loop through the days of the week and output whether the shop it open on each day of the week.
+// hint: use optional chaining.
+for (const day of days) {
+  console.log(restaurant.openingHours[day]?.open);
+}
